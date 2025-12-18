@@ -56,10 +56,3 @@ A parameter is used to specify which `.hex` file should be loaded into instructi
 Example from `imem.sv`:
 ```systemverilog
 parameter INIT_FILE = "tb_cpu_callret.hex";
-
-
-Author
-
-Nabin Kumar Singh
-M.S. Electrical and Computer Engineering
-University of Alabama at Huntsville
