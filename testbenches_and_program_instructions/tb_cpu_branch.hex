@@ -1,0 +1,24 @@
+4045  // 0: ADDI R1, R0, 5      ; R1 = 5
+4085  // 1: ADDI R2, R0, 5      ; R2 = 5
+40C1  // 2: ADDI R3, R0, 1      ; R3 = 1
+
+9282  // 3: BEQ  R1, R2, +2     ; taken: skip 4,5
+46C1  // 4: ADDI R3, R3, 1      ; only if BEQ not taken
+46C1  // 5: ADDI R3, R3, 1      ; only if BEQ not taken
+
+A2C2  // 6: BNE  R1, R3, +2     ; taken: skip 7,8
+4101  // 7: ADDI R4, R0, 1      ; only if BNE not taken
+4901  // 8: ADDI R4, R4, 1      ; only if BNE not taken
+
+417F  // 9: ADDI R5, R0, -1     ; R5 = FFFF  (imm6 = 111111)
+4181  //10: ADDI R6, R0, 1      ; R6 = 0001
+
+BB82  //11: BLT  R5, R6, +2     ; -1 < 1 -> taken: skip 12,13
+46C1  //12: ADDI R3, R3, 1      ; only if BLT not taken
+46C1  //13: ADDI R3, R3, 1      ; only if BLT not taken
+
+CD42  //14: BGE  R6, R5, +2     ; 1 >= -1 -> taken: skip 15,16
+4901  //15: ADDI R4, R4, 1      ; only if BGE not taken
+4901  //16: ADDI R4, R4, 1      ; only if BGE not taken
+
+F000  //17: HALT
