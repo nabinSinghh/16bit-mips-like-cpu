@@ -1,0 +1,10 @@
+//R type instructions hex code
+
+4045   // ADDI R1, R0, 5
+4083   // ADDI R2, R0, 3
+0298   // ADD  R3, R1, R2   ; R3 = 8
+02A1   // SUB  R4, R1, R2   ; R4 = 2
+12A8   // AND  R5, R1, R2   ; R5 = 1
+12B1   // OR   R6, R1, R2   ; R6 = 7
+12BA   // XOR  R7, R1, R2   ; R7 = 6
+F000   // HALT
