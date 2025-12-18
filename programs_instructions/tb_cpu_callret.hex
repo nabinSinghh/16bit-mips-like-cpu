@@ -1,9 +1,0 @@
-4041  // 0: ADDI R1, R0, 1      ; R1 = 1
-4082  // 1: ADDI R2, R0, 2      ; R2 = 2
-D005  // 2: CALL 5              ; LR(R7) = 3, PC -> 5
-40C9  // 3: ADDI R3, R0, 9      ; runs after RET
-F000  // 4: HALT
-
-4243  // 5: ADDI R1, R1, 3      ; R1 = 4
-4484  // 6: ADDI R2, R2, 4      ; R2 = 6
-E000  // 7: RET                 ; PC <- R7 = 3
