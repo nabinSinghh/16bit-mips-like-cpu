@@ -44,15 +44,26 @@ Each testbench targets a specific class of instructions, such as:
 - Shift operations
 - Call/return and control-flow instructions
 
-For every testbench (`.sv`), there is a matching `.hex` file that contains the machine code program executed by the CPU during simulation.
+
+
+For every testbench (`.sv`), there is a corresponding `.hex` file that contains the machine code program executed by the CPU during that specific simulation. Each testbench is designed to verify a particular instruction category, and its associated `.hex` file provides the instruction sequence required for that test.
 
 ---
 
 ## Instruction Memory and `.hex` File Usage
 
 The instruction memory module (`imem.sv`) supports file-based initialization using `$readmemh`.  
-A parameter is used to specify which `.hex` file should be loaded into instruction memory.
+A parameter in `imem.sv` is used to specify which `.hex` file should be loaded into instruction memory for simulation.
 
-Example from `imem.sv`:
+For each testbench, the `INIT_FILE` parameter in `imem.sv` must be set to the corresponding `.hex` file. For example, when running the call/return instruction testbench:
+
 ```systemverilog
 parameter INIT_FILE = "tb_cpu_callret.hex";
+```
+
+---
+
+## Author
+**Nabin Kumar Singh**  
+M.S. in Electrical and Computer Engineering  
+The University of Alabama in Huntsville
